@@ -1,41 +1,41 @@
-*Bu proje 42 müfredatının bir parçası olarak geliştirilmiş ve oluşturulmuştur.*
+*This project has been created as part of the 42 curriculum.*
 
 # FDF - Wireframe Model
 
-## Açıklama (Description)
-FDF, 3 boyutlu bir manzarayı tel kafes (wireframe) modeli olarak basitçe temsil etmeyi amaçlayan bir grafik projesidir. Proje kapsamında, argüman olarak verilen bir .fdf dosyasındaki koordinat noktaları (x, y, z) okunarak çizgi segmentleri (kenarlar) ile birbirine bağlanır ve model ekrana yansıtılır.
+## Description
+FDF is a computer graphics project aimed at simply representing a 3D landscape as a wireframe model. Within the scope of the project, coordinate points (x, y, z) in a given `.fdf` file are read, connected via line segments (edges), and the model is rendered on the screen.
 
-Bu projenin temel amaçları; grafik programlama mantığını kavramak, çizgi çizme algoritmalarını (Bresenham vb.) uygulamak ve pencere/olay yönetimini (MiniLibX kullanarak) öğrenmektir.
-
----
-
-## Özellikler ve Kurallar
-* **İzometrik Projeksiyon:** Program, oluşturulan modeli zorunlu olarak izometrik projeksiyon ile ekrana çizmektedir.
-* **MiniLibX Kullanımı:** Görüntü oluşturma ve ekrana basma süreçlerinde MiniLibX kütüphanesinin imaj (image) özelliklerinin kullanımı zorunludur.
-* **Pencere Yönetimi:** Pencere yönetimi akıcıdır (başka bir pencereye geçildiğinde donma yaşanmaz).
-* **Çıkış İşlemleri:** ESC tuşuna basıldığında veya pencerenin çerçevesindeki çarpı (X) ikonuna tıklandığında pencere kapanır ve program tüm ayrılan bellekleri temizleyerek sorunsuz bir şekilde sonlanır.
+The main objectives of this project are to understand the logic of graphics programming, implement line-drawing algorithms (such as Bresenham's), and learn window and event management using the MiniLibX library.
 
 ---
 
-## Kurulum ve Kullanım (Instructions)
+## Features and Rules
+* **Isometric Projection:** The program is strictly required to render the created model on the screen using isometric projection.
+* **MiniLibX Usage:** Utilizing the image features of the MiniLibX library is mandatory during the processes of image creation and rendering on the screen.
+* **Window Management:** Window management remains smooth (no freezing occurs when switching to another window).
+* **Exit Operations:** Pressing the `ESC` key or clicking the close cross (X) icon on the window frame closes the window and cleanly terminates the program, freeing all allocated memory.
 
-### Derleme
-Projeyi derlemek için terminalde aşağıdaki komutu çalıştırmanız yeterlidir:
+---
+
+## Instructions
+
+### Compilation
+To compile the project, simply run the following command in the terminal:
 make
 
-Bu işlem, kaynak dosyalarınızı -Wall, -Wextra ve -Werror bayraklarıyla derleyerek fdf isimli çalıştırılabilir dosyayı oluşturacaktır. Gerektiğinde temizlik yapmak için clean, fclean ve re kuralları kullanılabilir.
+This process will compile your source files with `-Wall`, `-Wextra`, and `-Werror` flags, generating the executable file named `fdf`. The `clean`, `fclean`, and `re` rules can be used for cleanup operations when necessary.
 
-### Çalıştırma
-Program, parametre olarak geçerli bir harita dosyası almalıdır:
+### Execution
+The program must take a valid map file as a parameter:
 ./fdf test_maps/42.fdf
 
-Haritadaki her sayı uzayda bir noktayı belirtir:
-* Yatay konum apsisi (X ekseni) temsil eder.
-* Dikey konum ordinatı (Y ekseni) temsil eder.
-* Sayının değeri ise yüksekliği (Z ekseni) temsil eder.
+Each number in the map represents a point in space:
+* The horizontal position represents the abscissa (X axis).
+* The vertical position represents the ordinate (Y axis).
+* The value of the number represents the altitude (Z axis).
 
 ---
 
-## Kaynaklar ve Yapay Zeka Kullanımı (Resources)
-* **Temel Referanslar:** Bresenham Çizgi Çizme Algoritması, İzometrik İzdüşüm Formülleri ve MiniLibX Kütüphane Dokümantasyonu.
-* **Yapay Zeka (AI) Kullanımı:** Bu projede yapay zeka araçları, .fdf dosyalarındaki verilerin okunması ve parse edilmesi sürecinde kod tekrarlarını azaltmak, ayrıca doğru ve verimli algoritmik yaklaşımlar (örneğin çizgi çizme mantığı) üzerine fikir alışverişi yapmak amacıyla kullanılmıştır. Üretilen içerik veya mantıklar projeye doğrudan kopyalanmamış; sistemli olarak test edilmiş, sorgulanmış ve akran değerlendirmelerinden geçirilerek koda entegre edilmiştir.
+## Resources & AI Usage
+* **Core References:** Bresenham's Line Algorithm, Isometric Projection Formulas, and MiniLibX Library Documentation.
+* **AI Usage:** In this project, AI tools were utilized to reduce code repetition during the process of reading and parsing `.fdf` files, as well as to brainstorm correct and efficient algorithmic approaches (e.g., line-drawing logic). The generated content or logic was not directly copied into the project; instead, it was systematically tested, questioned, and integrated into the code following peer reviews.
